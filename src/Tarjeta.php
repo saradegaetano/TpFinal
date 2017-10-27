@@ -35,6 +35,9 @@ class Tarjeta implements Tarjeta {
 		$fh=new DateTime();
 		$nViaje = $fh->format('Y-m-d-H-i-s');
 		$$nViaje = new Viaje ( $this , $transporte );	// El nombre del objeto tarjeta es la fecha y la hora del viaje
-		array_push ( $viajes , $$nViaje );
+		array_push ( $this->viajes , $$nViaje );
+	}
+	public function viajesRealizados () {
+		return $this->viajes;
 	}
 }
